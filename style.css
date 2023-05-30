@@ -1,0 +1,44 @@
+body{
+  background-color:black;
+  color:antiquewhite;
+  font-style:sans-serif;
+}
+
+.container{
+  display:grid;
+  grid-gap: 20px;
+}
+
+.gacha{
+  display:grid;
+  min-height:400px;
+  background-color:rgb(66, 66, 66);
+
+}
+
+.pull-btns{
+  display:grid;
+  grid-gap: 20px;
+  justify-content: center;
+  grid-template-areas:
+  "pull1 pull10"
+}
+.one-pull{
+  grid-area:pull1;
+};
+.ten-pull{
+  grid-area:pull10;
+}
+.other-actions{
+  display:grid;
+  grid-gap: 20px;
+  margin:20px;
+  grid-template-areas:
+  "history inventory"
+}
+.history{
+  grid-area:history;
+}
+.inventory{
+  grid-area:inventory;
+}
