@@ -12,7 +12,10 @@ body{
 .gacha{
   display:grid;
   min-height:400px;
-  background-color:rgb(66, 66, 66);
+  background-color:rgb(37, 37, 37);
+  border-style: solid;
+  border-color:rgb(202, 202, 202);
+  padding: 10px;
 
 }
 
