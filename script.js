@@ -16,7 +16,17 @@ let pitySoft = 0;
 let pity5 = 0;
 let guarantee = 0;
 
+
 ///functions///
+class dropEntry{
+  constructor(name, star, item){
+    this.name = name;
+    this.star = star;
+    this.item = item;
+  }
+}
+
+let dropDisplay = []
 
 const arrayRange = (start, stop, step) =>
     Array.from(
@@ -25,16 +35,21 @@ const arrayRange = (start, stop, step) =>
     );
 
 function pullBtn(boundary){ //pull button
-    pullRange = arrayRange(1, boundary, 1);
+  dropDisplay = []//empty the display before showing the pulls  
+  pullRange = arrayRange(1, boundary, 1);
     for (i in pullRange){
         let index = i;
         drop(index);
+    };
+    for (let i in dropDisplay){
+      htmltemp1();
     }
     
 }
 function drop(index){
     let dropName = null;
     let type5 = null;
+    
     
     console.log(index);
     if (pitySoft == 1){
@@ -100,6 +115,11 @@ function drop(index){
     };
     console.log(dropName)  
     console.log('guaranteed: ', guarantee);
+    new dropEntry(dropName, type, 'pass')
+    dropDisplay.push(dropEntry);
+    console.log(dropDisplay);
+    
+   
     
     
 }
@@ -136,6 +156,17 @@ function get_random (list) {
 //edit banner
 
 //print gacha results
+
+function htmltemp (){ //dont want to clutter the above functions
+  let html;
+  html = `<li class = drop> testing </li>`;
+  document.querySelector(".first").insertAdjacentHTML("afterend",html);
+}
+function htmltemp1(){
+  let html;
+  html = '<p>test</p>'
+  document.querySelector(".first").innerHTML = html;
+}
 
 //pulling action
 
