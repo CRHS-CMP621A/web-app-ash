@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <link href="style.css" rel="stylesheet" />
         <title>Gacha Simulator </title>
     <script defer src="script.js"></script>
@@ -14,32 +15,43 @@
 
 
 <div class="banner" >
-    banner (click to edit)(add onclick)
+
+<p class = limited5></p>
+<p class = ft4a></p>
+<p class = ft4b></p>
+<p class = ft4c></p>
+  </div>
 </div>
 <div class="gacha">
 
 wishing screen (aaaaaaaa)
-<ul>
-    <li class="first"></li>
+<ul class = "list">
+    <li class='first'></li>
 </ul>
 
 
 </div>
-<p class="stats">Pity: <span class="pity"></span> Guaranteed: <span class="guaranteeStatus"></span></p>
     <div class="pull-btns">
+        <p class="stats">Pity: <span class="pity"></span> Guaranteed: <span class="guaranteeStatus"></span></p>
         <button class="one-pull" onclick="pullBtn(1)"> 1 wish</button>
         <button class="ten-pull"onclick="pullBtn(10)"> 10 wishes</button>     
     </div>
     <div class="other-actions">
-        <button class="history">history</button>
-        <button class="inventory">inventory</button>
+        <button class="histroy-btn" onclick="showWindow('.history')">history</button>
+        <button class="inventorybtn" onclick="showWindow('.inventory')">inventory</button>
     </div>
 </div> 
 <div class = 'history hidden'>
-    <btn class = 'exit'></btn>
+    <button class = 'exit' onclick="closeWindow('.history')"> X </button>
+    <h3>history</h3>
+    <ul>
+        <li class = 'history-drop'></li>
+    </ul>
+
 </div>
 
 <div class = 'inventory hidden'>
-    <btn class = 'exit'></btn>
+    <button class = 'exit' onclick="closeWindow('.inventory')"> X </button>
+    <h3>inventory</h3>
 </div>
   </body>

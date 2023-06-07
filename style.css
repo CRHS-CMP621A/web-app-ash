@@ -3,10 +3,77 @@ body{
   color:antiquewhite;
   font-family:sans-serif;
 }
+h1 {text-align: center;}
+h3 {text-align: center;}
+ul {
+  list-style-type: none;
+  margin: 10px;
+  padding: 10px;
+}
+li{
+  margin: 10px 0;
+  padding: 5px;
+}
+.five{
+  border-color:gold;
+  border-width: thin;
+  border-style:solid;
+}
+.four{
+  border-color:rgb(100, 40, 114);
+  border-width: thin;
+  border-style:solid;
+}
+.three{
+  border-color:rgb(54, 122, 177);
+  border-width: thin;
+  border-style:solid;
+}
 
 .container{
   display:grid;
   grid-gap: 20px;
+}
+.banner{
+  display:grid;
+  background-color: rgb(30, 30, 30);
+  margin:20px;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+  "a5 a4"
+  "a5 b4"
+  "a5 c4"
+}
+
+.limited5{
+  grid-area: a5;
+  border-color:gold;
+  border-width: thin;
+  border-style:solid;
+  padding:5px;
+
+}
+.ft4a{
+  grid-area: a4;
+  border-color:rgb(100, 40, 114);
+  border-width: thin;
+  border-style:solid;
+  padding:5px;
+}
+.ft4b{
+  grid-area: b4;
+  border-color:rgb(100, 40, 114);
+  border-width: thin;
+  border-style:solid;
+  padding:5px;
+}
+.ft4c{
+  grid-area: c4;
+  border-color:rgb(100, 40, 114);
+  border-width: thin;
+  border-style:solid;
+  padding:5px;
 }
 
 .gacha{
@@ -20,28 +87,45 @@ body{
 }
 
 .pull-btns{
-  display:grid;
+  display:flex;
   grid-gap: 20px;
   justify-content: center;
-  grid-template-areas:
-  "pull1 pull10"
+  align-items:center;
+  padding:10px;
 }
-.one-pull{
-  grid-area:pull1;
-};
-.ten-pull{
-  grid-area:pull10;
+
+.stats{
+  text-align: center;
+
 }
 .other-actions{
   display:grid;
   grid-gap: 20px;
-  margin:20px;
+  margin:5px;
   grid-template-areas:
   "history inventory"
 }
-.history{
+.history-btn{
   grid-area:history;
 }
-.inventory{
+.inventory-btn{
   grid-area:inventory;
+}
+
+.history{
+  position: absolute;
+  background-color:rgb(29, 29, 29);
+  top: 10%;
+  height:680px;
+  width: 100%;
+  text-align: auto;
+  font-size: 18px;
+  overflow:scroll;
+}
+.hidden {
+  transform: translateY(-30rem);
+  height: 0;
+  padding: 0 2.25rem;
+  margin-bottom: 0;
+  opacity: 0;
 }
