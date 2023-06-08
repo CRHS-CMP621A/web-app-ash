@@ -39,7 +39,7 @@ li{
 }
 .banner{
 
-  background-color: rgb(30, 30, 30);
+  background-color: rgb(25,25,25);
   height:250px;
   width:300px;
   padding:10px;
@@ -102,7 +102,7 @@ li{
   display:grid;
   justify-self:center;
   min-height:400px;
-  background-color:rgb(37, 37, 37);
+  background-color:rgb(25,25,25);
   border-style: solid;
   border-color:rgb(202, 202, 202);
   padding: 10px;
@@ -118,18 +118,31 @@ li{
   align-items:center;
   padding:10px;
 }
+.one-pull, .ten-pull{
+  width:70%;
+  height:100%;
+  font-size: 16px;
+}
 
 .stats{
-  text-align: center;
+  display:flex;
+  justify-content: center;
+  gap:50px;
+  font-size: 18px;
 
 }
 .other-actions{
   display:flex;
+  flex-direction: column;
   gap:10px;
   justify-content: center;
 
 }
+.histroy-btn{
+  width:100%;
+  font-size: 16px;
 
+}
 .history{
   position: absolute;
   background-color:rgb(29, 29, 29);
