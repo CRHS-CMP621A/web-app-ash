@@ -35,19 +35,39 @@ li{
   grid-gap: 20px;
 }
 .banner{
-  display:grid;
+
   background-color: rgb(30, 30, 30);
-  margin:20px;
-  justify-items: center;
-  align-items: center;
+  height:250px;
+  width:300px;
+  padding:10px;
+
+  justify-self:center;
+  text-align:center;
+  justify-items:center;
+
+  /*display:grid;
+  
+  
   grid-template-areas:
-  "a5 a4"
-  "a5 b4"
-  "a5 c4"
+  "a5 a4 "
+  "a5 b4 "
+  "a5 c4 " */
 }
 
+.editbanner{
+  position:absolute;
+  top:17%;
+  width:300px;
+
+  background-color: rgb(18, 18, 18);
+  display:flex;
+  flex-direction:column;
+  padding:20px;
+  justify-self:center;
+  justify-content: center;
+}
 .limited5{
-  grid-area: a5;
+  /*grid-area: a5;*/
   border-color:gold;
   border-width: thin;
   border-style:solid;
@@ -55,21 +75,21 @@ li{
 
 }
 .ft4a{
-  grid-area: a4;
+  /*grid-area: a4;*/
   border-color:rgb(100, 40, 114);
   border-width: thin;
   border-style:solid;
   padding:5px;
 }
 .ft4b{
-  grid-area: b4;
+  /*grid-area: b4;*/
   border-color:rgb(100, 40, 114);
   border-width: thin;
   border-style:solid;
   padding:5px;
 }
 .ft4c{
-  grid-area: c4;
+  /*grid-area: c4;*/
   border-color:rgb(100, 40, 114);
   border-width: thin;
   border-style:solid;
@@ -99,17 +119,10 @@ li{
 
 }
 .other-actions{
-  display:grid;
-  grid-gap: 20px;
-  margin:5px;
-  grid-template-areas:
-  "history inventory"
-}
-.history-btn{
-  grid-area:history;
-}
-.inventory-btn{
-  grid-area:inventory;
+  display:flex;
+  gap:10px;
+  justify-content: center;
+
 }
 
 .history{

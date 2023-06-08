@@ -6,6 +6,23 @@ const fiveStandard = ['Diluc', 'Jean', 'Mona', 'Qiqi 💀', 'Keqing', 'Tighnari'
 const fourStandard = ['Amber', 'Kaeya', 'Lisa', 'Ningguang', 'Beidou', 'Surcrose', 'Bennett', 'Xiangling','Xingqiu', 'Chongyun', 'Razor', 'Fischl', 'Xinyan', 'Yunjin', 'Noelle', 'Barbara', 'Rosaria', 'Heizou', 'Gorou', 'Kuki Shinobu', 'Sayu', 'Thoma', 'Collei', 'Dori', 'Candace', 'Kujou Sara', 'Yanfei', 'rando weapon', 'Rust', 'Favonius Codex',  'Painslasher', 'trash (The Bell)', 'The Stringless', 'Favonius Sword', 'Oathsworn Eye'];
 const three = ['Cool Steel', 'Debate Club', 'Thrilling Tales of Dragon Slayer', 'Harbinger of Dawn', 'Black Tassel', 'White Tassel', "Recurve Bow"];
 const starType= [5,4,3];
+const fourType = ['f','s'];
+
+const input5 = document.querySelector('.chosen-limited5');
+const input4a = document.querySelector('.chosen-ft4a');
+const input4b = document.querySelector('.chosen-ft4b');
+const input4c = document.querySelector('.chosen-ft4c');
+
+
+function getTime (){
+  var today = new Date();
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  var dateTime = date+' '+time;
+  return dateTime;
+}
+
+ 
 
 let completeHistory = [];
 const data = JSON.parse(localStorage.getItem("completeHistory"));
@@ -13,16 +30,24 @@ if (data){
   console.log('saved');
   completeHistory = data;
   console.log(completeHistory);
-}
- 
+  for (let i in completeHistory){
+    let entry = completeHistory[i];
+    let name = entry[0];
+    let star = entry[1];
+    let time = entry[2];
+    htmlHistory(name, star, time);
 
+  };
+};
+ 
+let dropArray = []
 let fiveLimited = 'Venti';
 let fourFeatured = ['Sucrose', 'Kaveh','Xingqui' ]
 
-document.querySelector(".limited5").textContent = fiveLimited;
-document.querySelector(".ft4a").textContent = fourFeatured[0];
-document.querySelector(".ft4b").textContent = fourFeatured[1];
-document.querySelector(".ft4c").textContent = fourFeatured[2];
+document.querySelector(".limited5").textContent = '★★★★★ '+fiveLimited;
+document.querySelector(".ft4a").textContent = '★★★★ '+fourFeatured[0];
+document.querySelector(".ft4b").textContent = '★★★★ '+fourFeatured[1];
+document.querySelector(".ft4c").textContent = '★★★★ '+fourFeatured[2];
 
 //global variables
 let pity4 = 0;
@@ -58,7 +83,7 @@ const arrayRange = (start, stop, step) =>
     );
 
 function pullBtn(boundary){ //pull button
-  dropDisplay = []//empty the display before showing the pulls
+
   document.querySelector(".list").innerHTML = "<li class = 'first'></li>";  
   pullRange = arrayRange(1, boundary, 1);
     for (i in pullRange){
@@ -66,6 +91,8 @@ function pullBtn(boundary){ //pull button
         drop(index);
     };
     document.querySelector(".pity").textContent = pity5;
+    localStorage.setItem("completeHistory", JSON.stringify(completeHistory));
+    console.log(completeHistory);
   
     
 }
@@ -73,6 +100,7 @@ function drop(index){
     let dropName = null;
     let type5 = null;
     let pityLog = pity5+1;
+    let time = null;
     
     console.log(index);
     if (pitySoft == 1){
@@ -118,7 +146,12 @@ function drop(index){
     console.log('soft pity:', pitySoft) //determing the final drop type
 
     if (type == 4){
-       dropName = get_random(fourStandard);
+       dropName = determine4(weightFourStar);
+       if (dropName == 'f'){
+        dropName = get_random(fourFeatured);
+       }else{
+        dropName = get_random(fourStandard);
+       };
     }else if (type == 5){
       if (guarantee == 0){
         type5 = get_random(['limited','standard']);
@@ -138,15 +171,18 @@ function drop(index){
       }else if (type == 3){
         dropName = get_random(three);
     };
+    time = getTime()
+  
     console.log(dropName)  
     console.log('guaranteed: ', guarantee);
-    new dropEntry(dropName, type, 'pass')
-    dropDisplay.push(dropEntry);
-    completeHistory.push(dropEntry);
-    localStorage.setItem("completeHistory", JSON.stringify(completeHistory));
-    console.log(dropDisplay);
+    new dropEntry(dropName, type, time)
+   
+    dropArray = [dropName, type, time]
+    completeHistory.push(dropArray);
+ 
     htmltemp(dropName, type, pityLog);
-    htmlHistory(dropName, type);
+    htmlHistory(dropName, type, time);
+    
     
   
     
@@ -159,6 +195,7 @@ function drop(index){
 //probabilities
 const weightDefault = [0.6, 5.7, 100]
 const weightCumulative = [20,25.1, 100]
+const weightFourStar = [70,100]
 
 function determineType(odds){
     let randomNumber = 100 * Math.random();
@@ -173,16 +210,42 @@ function determineType(odds){
       }
 }
 
+function determine4(odds){
+  let randomNumber = 100 * Math.random();
+  for (let itemIndex = 0; itemIndex < fourType.length; itemIndex += 1) {
+      if (odds[itemIndex] >= randomNumber) {
+        return fourType[itemIndex];
+
+      }
+    }
+}
 function get_random (list) {
   return list[Math.floor((Math.random()*list.length))];
 }
 //add pulls into inventory
 
-//add pulls into history
 
 
 //edit banner
 
+function confirmBtn (){
+  console.log('click triggered')
+  editBanner();
+  closeWindow('.editbanner')
+
+}
+
+function editBanner(){
+  fiveLimited = input5.value;
+  four1 = input4a.value;
+  four2 = input4b.value;
+  four3 =  input4c.value;
+  fourFeatured = [four1, four2, four3];
+  document.querySelector(".limited5").textContent = '★★★★★ '+fiveLimited;
+  document.querySelector(".ft4a").textContent = '★★★★ '+fourFeatured[0];
+  document.querySelector(".ft4b").textContent = '★★★★ '+fourFeatured[1];
+  document.querySelector(".ft4c").textContent = '★★★★ '+fourFeatured[2];
+}
 //print gacha results
 
 function htmltemp (name, star, pity){ //dont want to clutter the above functions
@@ -216,20 +279,24 @@ function closeWindow(classname){
 
 
 //the HISTORY
-function htmlHistory (name, star){ //dont want to clutter the above functions
+function htmlHistory (name, star, time){ //dont want to clutter the above functions
   let html;
   let starType = star;
   let dropName = name;
   if (starType  == 5){
-    html = `<li class = 'drop five'> ★★★★★ ${dropName} </li>`;
+    html = `<li class = 'drop five'>${time} | ★★★★★ ${dropName} </li>`;
   }else if (starType == 4){
-    html = `<li class = 'drop four'> ★★★★  ${dropName} </li>`;
+    html = `<li class = 'drop four'>${time} | ★★★★  ${dropName} </li>`;
   }else{
-    html = `<li class = 'drop three'> ★★★   ${dropName} </li>`;
+    html = `<li class = 'drop three'>${time} | ★★★   ${dropName} </li>`;
   };
   
   document.querySelector('.history-drop').insertAdjacentHTML("afterend",html);
 }
 
-
+function wipeHistory(){
+  localStorage.clear();
+  document.querySelector('.history-list').innerHTML = " <li class = 'history-drop'></li>";
+  console.log('deleted')
+}
 //inventory display(consts)

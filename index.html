@@ -14,17 +14,25 @@
 
 
 
-<div class="banner" >
+<div class="banner" onclick="showWindow('.editbanner')" >
+    
+    <p class = limited5></p> 
+    <p class = ft4a></p>
+    <p class = ft4b></p>
+    <p class = ft4c></p>click to edit
 
-<p class = limited5></p>
-<p class = ft4a></p>
-<p class = ft4b></p>
-<p class = ft4c></p>
-  </div>
 </div>
+
+<div class = 'editbanner hidden'>
+    <input type="text" class = chosen-limited5  placeholder="5 star"> <br>
+        <input type="text" class = chosen-ft4a placeholder="4 star"> <br>
+        <input type="text" class = chosen-ft4b placeholder="4 star"> <br>
+        <input type="text" class = chosen-ft4c placeholder="4 star"><br>
+        <button  class="form-submit" onclick = "confirmBtn()" >confirm</button>  
+</div>
+
 <div class="gacha">
 
-wishing screen (aaaaaaaa)
 <ul class = "list">
     <li class='first'></li>
 </ul>
@@ -39,12 +47,14 @@ wishing screen (aaaaaaaa)
     <div class="other-actions">
         <button class="histroy-btn" onclick="showWindow('.history')">history</button>
         <button class="inventorybtn" onclick="showWindow('.inventory')">inventory</button>
+        
     </div>
 </div> 
 <div class = 'history hidden'>
     <button class = 'exit' onclick="closeWindow('.history')"> X </button>
+    <button class="wipe-histroy-btn" onclick="wipeHistory()">wipe history</button>
     <h3>history</h3>
-    <ul>
+    <ul class = 'history-list'>
         <li class = 'history-drop'></li>
     </ul>
 
