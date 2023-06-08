@@ -299,4 +299,4 @@ function wipeHistory(){
   document.querySelector('.history-list').innerHTML = " <li class = 'history-drop'></li>";
   console.log('deleted')
 }
-//inventory display(consts)
+//inventory display(i am going to cry)
