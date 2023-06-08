@@ -1,0 +1,180 @@
+/* why is this conflicting with main literally what just let me save please */
+
+body{
+  background-color:black;
+  color:antiquewhite;
+  font-family:sans-serif;
+}
+h1 {text-align: center;}
+h3 {text-align: center;}
+ul {
+  list-style-type: none;
+  margin: 10px;
+  padding: 10px;
+}
+li{
+  margin: 10px 0;
+  padding: 5px;
+}
+.five{
+  border-color:gold;
+  border-width: thin;
+  border-style:solid;
+}
+.four{
+  border-color:rgb(100, 40, 114);
+  border-width: thin;
+  border-style:solid;
+}
+.three{
+  border-color:rgb(54, 122, 177);
+  border-width: thin;
+  border-style:solid;
+}
+
+.container{
+ padding:5px;
+ display: grid;
+ grid-gap:10px;
+}
+.banner{
+
+  background-color: rgb(25,25,25);
+  height:250px;
+  width:300px;
+  padding:10px;
+
+  text-align:center;
+  justify-items:center;
+  justify-self:center;
+
+  /*display:grid;
+  
+  
+  grid-template-areas:
+  "a5 a4 "
+  "a5 b4 "
+  "a5 c4 " */
+}
+
+.editbanner{
+  position:absolute;
+  top:14%;
+  width:290px;
+  height:280px;
+  justify-self:center;
+
+  background-color: rgb(18, 18, 18);
+  display:flex;
+  flex-direction:column;
+  padding:20px;
+  justify-content: center;
+}
+.limited5{
+  /*grid-area: a5;*/
+  border-color:gold;
+  border-width: thin;
+  border-style:solid;
+  padding:5px;
+
+}
+.ft4a{
+  /*grid-area: a4;*/
+  border-color:rgb(100, 40, 114);
+  border-width: thin;
+  border-style:solid;
+  padding:5px;
+}
+.ft4b{
+  /*grid-area: b4;*/
+  border-color:rgb(100, 40, 114);
+  border-width: thin;
+  border-style:solid;
+  padding:5px;
+}
+.ft4c{
+  /*grid-area: c4;*/
+  border-color:rgb(100, 40, 114);
+  border-width: thin;
+  border-style:solid;
+  padding:5px;
+}
+
+.gacha{
+  display:grid;
+  justify-self:center;
+  min-height:400px;
+  background-color:rgb(25,25,25);
+  border-style: solid;
+  border-color:rgb(202, 202, 202);
+  padding: 10px;
+  width:50%;
+  margin-top:5px;
+  
+
+}
+
+.pull-btns{
+  display:flex;
+  grid-gap: 20px;
+  justify-content: center;
+  align-items:center;
+  margin-left:10%;
+  margin-right:10%;
+
+}
+.one-pull, .ten-pull{
+  width:70%;
+  height:100%;
+  font-size: 16px;
+}
+
+.stats{
+  display:flex;
+  justify-content: center;
+  gap:50px;
+  font-size: 18px;
+
+}
+.other-actions{
+  display:flex;
+  flex-direction: column;
+  gap:10px;
+  justify-content: center;
+  margin-left:10%;
+  margin-right:10%;
+
+}
+.histroy-btn{
+  width:100%;
+  font-size: 16px;
+
+}
+.history{
+  position: absolute;
+  background-color:rgb(29, 29, 29);
+  top: 10%;
+  height:680px;
+  width: 100%;
+  text-align: auto;
+  font-size: 18px;
+  overflow:scroll;
+}
+.hidden {
+  transform: translateY(-30rem);
+  height: 0;
+  padding: 0 2.25rem;
+  margin-bottom: 0;
+  opacity: 0;
+}
+
+@media only screen and (max-width: 700px){
+  .gacha{
+    width:70%;
+  }
+}
+@media only screen and (max-width: 500px){
+  .gacha{
+    width:90%;
+  }
+}

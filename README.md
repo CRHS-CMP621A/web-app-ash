@@ -1,7 +1,8 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/_AfzJBUU)
 # JS-Web-App
-## Project Name:
-#### Developers: 
-#### Date and Course:
+## Project Name: Text-Based Genshin Gacha Simulator
+#### Developers: Ash
+#### Date and Course: 5/29/2023
 <hr>
 
 ### Problem Or Situation to Improve
@@ -9,7 +10,7 @@
 Audience: Who would use your product and where? 
 If you are re-building an app that already exists, then explain what the issue is with the current app that you want to improve.
 
->> 
+>> I have a favourite game at the minute that I can't share with a close friend because my friend has complex photosensitivity and neurological issues that makes them basically allergic to some colors and very sensitive to some moving graphics. The probablity and pity system of this game's gacha system has always intrigued me, so I will be making a gacha simulator of this game that is text-based and accesible for my friend, and hopefully also for people with similar medical issues. Some poeple have also theorised that a gacha simulator can also help people who already play gacha games get the urge to 'pull' out of their system, so to say, and I hope that this app will be able to do that.
 
 
 
