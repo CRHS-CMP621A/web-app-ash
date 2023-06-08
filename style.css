@@ -59,8 +59,10 @@ li{
 
 .editbanner{
   position:absolute;
-  top:17%;
-  width:300px;
+  top:14%;
+  width:290px;
+  height:280px;
+  justify-self:center;
 
   background-color: rgb(18, 18, 18);
   display:flex;
@@ -107,6 +109,7 @@ li{
   border-color:rgb(202, 202, 202);
   padding: 10px;
   width:50%;
+  margin-top:5px;
   
 
 }
@@ -116,7 +119,9 @@ li{
   grid-gap: 20px;
   justify-content: center;
   align-items:center;
-  padding:10px;
+  margin-left:10%;
+  margin-right:10%;
+
 }
 .one-pull, .ten-pull{
   width:70%;
@@ -136,6 +141,8 @@ li{
   flex-direction: column;
   gap:10px;
   justify-content: center;
+  margin-left:10%;
+  margin-right:10%;
 
 }
 .histroy-btn{
